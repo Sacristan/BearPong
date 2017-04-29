@@ -43,7 +43,7 @@ public class DrunkBehaviour : MonoBehaviour
     {
         _Camera = GetComponent<Camera>();
         _Effect = GetComponent<VignetteAndChromaticAberration>();
-        Drunkenness = 0.5f;
+        //Drunkenness = 0.5f;
     }
     
     void Update()

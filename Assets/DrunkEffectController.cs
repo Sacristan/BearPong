@@ -7,18 +7,6 @@ using UnityStandardAssets.ImageEffects;
 [RequireComponent(typeof(VignetteAndChromaticAberration))]
 public class DrunkEffectController : MonoBehaviour
 {
-    private struct MinMax
-    {
-        public float min;
-        public float max;
-
-        public MinMax(float min, float max)
-        {
-            this.min = min;
-            this.max = max;
-        }
-    }
-
     [SerializeField]
     [Range(0f, 1f)]
     private float drunkinessLevel = 0f;

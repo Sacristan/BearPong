@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿#define DEBUG_BEAR_BEHAVIOUR
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -23,24 +25,33 @@ public class BearAIController : MonoBehaviour
 
     #region MonoBehaviour
 
-    void Update()
+    private void Start()
     {
-        if (Time.realtimeSinceStartup - lastShotTime > throwInterval)
-        {
-            lastShotTime = Time.realtimeSinceStartup;
-
-            GameObject ball = Instantiate(spawn, throwOrigin.position, Quaternion.identity);
-            Rigidbody ballRigidbody = ball.GetComponent<Rigidbody>();
-            ballRigidbody.velocity = GetBallisticVelocity(target, shotAngle.RandomFromRange());
-            Destroy(ball, 5f);
-        }
+        GameManager.Instance.OnTurnStateChanged += Instance_OnTurnStateChanged;
     }
+
+#if DEBUG_BEAR_BEHAVIOUR
+    private void Update()
+    {
+        if (Time.realtimeSinceStartup - lastShotTime > throwInterval) Shoot();
+    }
+#endif
     #endregion
 
     #region Private Methods
+    private void Shoot()
+    {
+        lastShotTime = Time.realtimeSinceStartup;
+
+        GameObject ball = Instantiate(spawn, throwOrigin.position, Quaternion.identity);
+        Rigidbody ballRigidbody = ball.GetComponent<Rigidbody>();
+        ballRigidbody.velocity = GetBallisticVelocity(target, shotAngle.RandomFromRange());
+        Destroy(ball, 5f);
+    }
+
     private Vector3 GetBallisticVelocity(Transform target, float angle)
     {
-        Vector3 dir = target.position - throwOrigin.position;
+        Vector3 dir = GetTargetPosition() - throwOrigin.position;
         float h = dir.y;
         dir.y = 0;
         float dist = dir.magnitude;
@@ -54,11 +65,21 @@ public class BearAIController : MonoBehaviour
 
     private Vector3 GetTargetPosition()
     {
-        Vector3 offset = Vector3.forward * 1.6f;
-
-
-        return target.position + offset;
+        return target.position;
     }
 
+    #endregion
+
+    #region Event Callbacks
+    private void Instance_OnTurnStateChanged(GameManager.TurnState newTurnState)
+    {
+        switch (newTurnState)
+        {
+            case GameManager.TurnState.Bear:
+                break;
+            case GameManager.TurnState.Player:
+                break;
+        }
+    }
     #endregion
 }

@@ -15,6 +15,7 @@ public class CupBehaviour : MonoBehaviour
     {
         OnBallEnter += (cup, ball) => {
             Debug.Log("HIT!!!");
+            Debug.Log(ball.tag);
         };
     }
 }

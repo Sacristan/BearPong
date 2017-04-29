@@ -91,7 +91,7 @@ public class ObjectPickup : MonoBehaviour
         if (obj != null)
         {
             fJoint.connectedBody = obj.GetComponent<Rigidbody>();
-
+            obj.GetComponent<BallBehaviour>().MarkCatcheable();
             throwing = false;
             rigidbody = null;
         }

@@ -22,6 +22,11 @@ public class GameManager : Singleton<GameManager>
     public delegate void EventHandler(TurnState newTurnState);
     public event EventHandler OnTurnStateChanged;
 
+    private void Start()
+    {
+        BallSpawner.Instance.SpawnBall();
+    }
+
     public void ToggleTurn()
     {
         switch (turnState)
@@ -37,6 +42,22 @@ public class GameManager : Singleton<GameManager>
         }
 
         if (OnTurnStateChanged != null) OnTurnStateChanged.Invoke(turnState);
+    }
+
+    public void PlayerScored()
+    {
+
+    }
+
+    public void BearScored()
+    {
+        DrunkEffectController.Instance.GetDrunk();
+    }
+
+    public void ShotMissed()
+    {
+        Debug.Log("ShotMissed");
+        ToggleTurn();
     }
 
 }

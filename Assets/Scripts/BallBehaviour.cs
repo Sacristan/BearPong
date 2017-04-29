@@ -25,6 +25,10 @@ public class BallBehaviour : MonoBehaviour
         }
     }
 
+	public void CallSFX(){
+		GetComponent<AudioSource> ().Play();
+	}
+
     public IEnumerator KillInSeconds()
     {
         yield return new WaitForSeconds(_Lifetime);

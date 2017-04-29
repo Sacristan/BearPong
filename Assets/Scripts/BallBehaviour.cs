@@ -21,7 +21,7 @@ public class BallBehaviour : MonoBehaviour
             if (other.tag == GameTags.BearCup)
             {
                 DrunkEffectController.Instance.GetDrunk();
-                Debug.Log("Cup Hit, bear gets another throw!");
+                //Debug.Log("Cup Hit, bear gets another throw!");
             }
             else if (other.tag == GameTags.PlayerCup)
             {

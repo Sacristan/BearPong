@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BallBehaviour : MonoBehaviour
@@ -11,7 +10,7 @@ public class BallBehaviour : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == GameTags.Cup)
+        if (!_CupHit && (other.tag == GameTags.Cup))
         {
             _CupHit = true;
             Debug.Log("Cup Hit, another throw!");

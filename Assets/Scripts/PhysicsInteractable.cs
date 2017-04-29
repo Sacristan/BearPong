@@ -67,6 +67,8 @@ public class PhysicsInteractable : InteractableBase
 
     public override void OnGripPressDown(WandController wand)
     {
+		Debug.Log ("OnGripPressDown");
+
         attachedWand = wand;
         interactionPoint.position = wand.transform.position;
         interactionPoint.rotation = wand.transform.rotation;

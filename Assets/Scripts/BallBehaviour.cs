@@ -18,11 +18,13 @@ public class BallBehaviour : MonoBehaviour
             if (other.tag == GameTags.BearCup)
             {
                 GameManager.Instance.BearScored();
+                ScoredCupEffect(other.gameObject);
                 Debug.Log("Cup Hit, bear gets another throw!");
             }
             else if (other.tag == GameTags.PlayerCup)
             {
                 GameManager.Instance.PlayerScored();
+                ScoredCupEffect(other.gameObject);
                 Debug.Log("Cup Hit, player gets another throw!");
             }
             else if (isCatcheable && other.tag == GameTags.BallCatchNet)
@@ -49,5 +51,10 @@ public class BallBehaviour : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void ScoredCupEffect(GameObject cup)
+    {
+        Destroy(cup);
     }
 }

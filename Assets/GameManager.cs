@@ -22,6 +22,11 @@ public class GameManager : Singleton<GameManager>
     public delegate void EventHandler(TurnState newTurnState);
     public event EventHandler OnTurnStateChanged;
 
+    private int playerScore = 0;
+    private int bearScore = 0;
+
+    private const int MaxScore = 3;
+
     private void Start()
     {
         BallSpawner.Instance.SpawnBall();
@@ -33,9 +38,11 @@ public class GameManager : Singleton<GameManager>
         {
             case TurnState.Player:
                 turnState = TurnState.Bear;
+                BearAIController.Instance.QueueThrow();
                 break;
             case TurnState.Bear:
                 turnState = TurnState.Player;
+                BallSpawner.Instance.SpawnBall();
                 break;
             default:
                 throw new System.NotImplementedException();
@@ -46,12 +53,16 @@ public class GameManager : Singleton<GameManager>
 
     public void PlayerScored()
     {
-
+        BearAIController.Instance.TriggerDrunk();
+        if (++playerScore >= MaxScore) TriggerWin();
+        BallSpawner.Instance.SpawnBall();
     }
 
     public void BearScored()
     {
         DrunkEffectController.Instance.GetDrunk();
+        if (++bearScore >= MaxScore) TriggerWin();
+        BearAIController.Instance.QueueThrow();
     }
 
     public void ShotMissed()
@@ -60,4 +71,13 @@ public class GameManager : Singleton<GameManager>
         ToggleTurn();
     }
 
+    private void TriggerWin()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    private void TriggerLose()
+    {
+        throw new System.NotImplementedException();
+    }
 }

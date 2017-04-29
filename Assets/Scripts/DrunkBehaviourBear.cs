@@ -1,13 +1,15 @@
 ﻿using System.Collections;
 using UnityEngine;
-using UnityStandardAssets.ImageEffects;
+//using UnityStandardAssets.ImageEffects;
 
-[RequireComponent(typeof(Camera))]
-[RequireComponent(typeof(VignetteAndChromaticAberration))]
-public class DrunkBehaviour : MonoBehaviour
+//[RequireComponent(typeof(Camera))]
+//[RequireComponent(typeof(VignetteAndChromaticAberration))]
+public class DrunkBehaviourBear : MonoBehaviour
 {
-    private Camera _Camera;
-    private VignetteAndChromaticAberration _Effect;
+    //TODO add some messsing with aim or something based on Drunkenness, same for the player
+
+    //private Camera _Camera;
+    //private VignetteAndChromaticAberration _Effect;
     private float _Drunkenness = 0f;
     private float _MaxDrunkenness = 1f;
     private float _MinDrunkenness = 0f;
@@ -19,10 +21,10 @@ public class DrunkBehaviour : MonoBehaviour
     private float _DistortionIntervalInSeconds = 1f;
     [SerializeField]
     private float _DistortionRandomFactor = 0.1f;
-    [SerializeField]
-    private int _CameraMin = 60;
-    [SerializeField]
-    private int _CameraMax = 90;
+    //[SerializeField]
+    //private int _CameraMin = 60;
+    //[SerializeField]
+    //private int _CameraMax = 90;
     private bool _InDrunk = false;
 
     public float Drunkenness
@@ -39,14 +41,13 @@ public class DrunkBehaviour : MonoBehaviour
         }
     }
 
-    void Start()
+    private void Start()
     {
-        _Camera = GetComponent<Camera>();
-        _Effect = GetComponent<VignetteAndChromaticAberration>();
-        //Drunkenness = 0.5f;
+        //_Camera = GetComponent<Camera>();
+        //_Effect = GetComponent<VignetteAndChromaticAberration>();
     }
-    
-    void Update()
+
+    private void Update()
     {
         if (!_InDrunk)
         {
@@ -68,8 +69,9 @@ public class DrunkBehaviour : MonoBehaviour
 
     private void EditEffectAndCamera(float drunkenness)
     {
-        _Effect.intensity = drunkenness;
-        _Camera.fieldOfView = _CameraMin + ((_CameraMax - _CameraMin) * drunkenness);
+        //_Effect.intensity = drunkenness;
+        //_Camera.fieldOfView = _CameraMin + ((_CameraMax - _CameraMin) * drunkenness);
+        //do some visual/audio stuff here, stumble around, roar or whatever drunken bears do ...
     }
 
     private IEnumerator GetDrunk(float target, float timeInSeconds)

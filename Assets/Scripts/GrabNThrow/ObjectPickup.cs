@@ -113,7 +113,15 @@ public class ObjectPickup : MonoBehaviour
 
             throwing = true;
 
-            Debug.Log((rigidbody.GetComponentInParent<BallBehaviour>() != null) + " rigidbody");
+            BallBehaviour bb = rigidbody.GetComponentInParent<BallBehaviour>();
+            if (bb != null)
+            {
+                bb.StartCoroutine(bb.KillInSeconds());
+            }
+            else
+            {
+                Debug.Log("BallBehaviour is null");
+            }
         }
     }
 }

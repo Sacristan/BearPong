@@ -8,14 +8,14 @@ public class CupBehaviour : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        /*if (other.tag == "Pickable")*/ OnBallEnter(transform, other.transform);
+        ///*if (other.tag == "Pickable")*/ OnBallEnter(transform, other.transform);
     }
 
     private void Start()
     {
-        OnBallEnter += (cup, ball) => {
+        /*OnBallEnter += (cup, ball) => {
             Debug.Log("HIT!!!");
             Debug.Log(ball.tag);
-        };
+        };*/
     }
 }

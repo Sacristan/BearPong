@@ -13,9 +13,11 @@ using System.Collections;
  * more effort from the player to move, whether by investing more time (due to slower velocity)
  * or more movement (to increase the delta vector which increases the velocity).
  */
+
+[RequireComponent(typeof(Rigidbody))]
 public class PhysicsInteractable : InteractableBase
 {
-    protected Rigidbody rigidbody;
+    protected Rigidbody _rigidbody;
     protected bool currentlyInteracting;
     protected uint itemId;
 
@@ -36,10 +38,10 @@ public class PhysicsInteractable : InteractableBase
     // Use this for initialization
     protected void Start()
     {
-        rigidbody = GetComponent<Rigidbody>();
+        _rigidbody = GetComponent<Rigidbody>();
         interactionPoint = new GameObject().transform;
-        velocityFactor /= rigidbody.mass;
-        rotationFactor /= rigidbody.mass;
+        velocityFactor /= _rigidbody.mass;
+        rotationFactor /= _rigidbody.mass;
     }
 
     // Update is called once per frame
@@ -49,7 +51,7 @@ public class PhysicsInteractable : InteractableBase
         if (attachedWand && currentlyInteracting)
         {
             posDelta = attachedWand.transform.position - interactionPoint.position;
-            this.rigidbody.velocity = posDelta * velocityFactor * Time.fixedDeltaTime;
+            this._rigidbody.velocity = posDelta * velocityFactor * Time.fixedDeltaTime;
 
             rotationDelta = attachedWand.transform.rotation * Quaternion.Inverse(interactionPoint.rotation);
             rotationDelta.ToAngleAxis(out angle, out axis);
@@ -59,18 +61,21 @@ public class PhysicsInteractable : InteractableBase
                 angle -= 360;
             }
 
-            this.rigidbody.angularVelocity = (Time.fixedDeltaTime * angle * axis) * rotationFactor;
+            this._rigidbody.angularVelocity = (Time.fixedDeltaTime * angle * axis) * rotationFactor;
         }
     }
 
     public override void OnGripPressDown(WandController wand)
     {
+		Debug.Log ("OnGripPressDown");
+
         attachedWand = wand;
         interactionPoint.position = wand.transform.position;
         interactionPoint.rotation = wand.transform.rotation;
         interactionPoint.SetParent(transform, true);
 
         currentlyInteracting = true;
+        _rigidbody.isKinematic = false;
     }
 
     public override void OnGripPressUp(WandController wand)

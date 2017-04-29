@@ -83,6 +83,8 @@ public class WandController : MonoBehaviour
     // Adds all colliding items to a HashSet for processing which is closest
     private void OnTriggerEnter(Collider collider)
     {
+		Debug.Log ("OnTriggerEnter");
+
         InteractableBase collidedItem = collider.GetComponent<InteractableBase>();
         if (collidedItem)
         {

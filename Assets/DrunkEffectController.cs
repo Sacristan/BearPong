@@ -16,7 +16,7 @@ public class DrunkEffectController : Singleton<DrunkEffectController>
 
     public void GetDrunk()
     {
-        drunkinessLevel = Mathf.Clamp(drunkinessLevel + 0.3f, 0f, 1f);
+        drunkinessLevel = Mathf.Clamp(drunkinessLevel + 0.3f, 0f, 0.9f);
     }
 
     #region MonoBehaviour

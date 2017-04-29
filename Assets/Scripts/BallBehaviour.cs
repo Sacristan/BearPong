@@ -26,6 +26,7 @@ public class BallBehaviour : MonoBehaviour
     }
 
 	public void CallSFX(){
+		Debug.Log ("CallSFX");
 		GetComponent<AudioSource> ().Play();
 	}
 

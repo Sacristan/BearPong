@@ -111,6 +111,8 @@ public class ObjectPickup : MonoBehaviour
 
             throwing = true;
 
+            obj.GetComponent<AudioSource>().Play();
+
             BallBehaviour bb = rigidbody.GetComponentInParent<BallBehaviour>();
             if (bb != null)
             {

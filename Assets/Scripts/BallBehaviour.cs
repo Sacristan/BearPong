@@ -27,21 +27,24 @@ public class BallBehaviour : MonoBehaviour
                 ScoredCupEffect(other.gameObject);
                 Debug.Log("Cup Hit, player gets another throw!");
             }
-            else if (isCatcheable && other.tag == GameTags.BallCatchNet)
-            {
-                GameManager.Instance.ShotMissed();
-            }
         }
+
+		if (other.tag == GameTags.BallCatchNet)
+		{
+			if (isCatcheable) GameManager.Instance.ShotMissed();
+		}
     }
 
     public void MarkCatcheable()
     {
+		Debug.Log ("MarkCatcheable");
         isCatcheable = true;
     }
 
     public void CallSFX()
     {
-        GetComponent<AudioSource>().Play();
+		AudioSource audioSource = GetComponent<AudioSource> ();
+		if(audioSource!=null) audioSource.Play();
     }
 
     public IEnumerator KillInSeconds()

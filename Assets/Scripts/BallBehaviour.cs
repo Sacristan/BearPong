@@ -10,9 +10,14 @@ public class BallBehaviour : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+		if (other.tag == GameTags.PlayerCup) {
+			other.GetComponentInParent<AudioSource> ().Play ();			
+		}
+
         if (!_CupHit)
         {
             _CupHit = true;
+
             if (other.tag == GameTags.BearCup)
             {
                 DrunkEffectController.Instance.GetDrunk();

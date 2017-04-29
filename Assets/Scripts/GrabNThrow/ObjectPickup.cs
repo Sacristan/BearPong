@@ -116,7 +116,8 @@ public class ObjectPickup : MonoBehaviour
             BallBehaviour bb = rigidbody.GetComponentInParent<BallBehaviour>();
             if (bb != null)
             {
-				bb.CallSFX ();
+				Debug.Log ("bb.CallSFX called");
+				bb.CallSFX();
                 bb.StartCoroutine(bb.KillInSeconds());
             }
             else

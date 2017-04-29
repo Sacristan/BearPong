@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ObjectPickup : MonoBehaviour
 {
@@ -112,6 +110,16 @@ public class ObjectPickup : MonoBehaviour
             fJoint.connectedBody = null;
 
             throwing = true;
+
+            BallBehaviour bb = rigidbody.GetComponentInParent<BallBehaviour>();
+            if (bb != null)
+            {
+                bb.StartCoroutine(bb.KillInSeconds());
+            }
+            else
+            {
+                Debug.Log("BallBehaviour is null");
+            }
         }
     }
 }

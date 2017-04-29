@@ -1,0 +1,4 @@
+﻿1) spēlētājs sāk pirmais
+2) ja spēlētājs(vai lācis) trāpa ar bumbiņu krūzītē, pretiniekam krūze ir jāizdzer un spēlētājs (vai lācis) var mest vēlreiz
+3) tas spēlētājs, kuram nav nevienas krūzes, zaudē.
+4) pēc metiena izdarīšanas noteiktā laikā bumba nav glāzītē, metiens ir garām.

@@ -14,6 +14,7 @@ public class BallBehaviour : MonoBehaviour
         {
             _CupHit = true;
             Debug.Log("Cup Hit, another throw!");
+            //TODO drunk other
         }
     }
 
@@ -24,15 +25,5 @@ public class BallBehaviour : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
-
-    void Start()
-    {
-
-    }
-    
-    void Update()
-    {
-
     }
 }

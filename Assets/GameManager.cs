@@ -10,6 +10,15 @@ public class GameManager : Singleton<GameManager>
     [SerializeField]
     public TurnState turnState;
 
+    [SerializeField]
+    private BearPongBucket[] bearPongBucketsPlayer;
+
+    [SerializeField]
+    private BearPongBucket[] bearPongBucketsBear;
+
+    public BearPongBucket[] BearPongBucketsPlayer { get { return bearPongBucketsPlayer; } }
+    public BearPongBucket[] BearPongBucketsBear { get { return bearPongBucketsBear; } }
+
     public delegate void EventHandler(TurnState newTurnState);
     public event EventHandler OnTurnStateChanged;
 
@@ -25,7 +34,6 @@ public class GameManager : Singleton<GameManager>
                 break;
             default:
                 throw new System.NotImplementedException();
-
         }
 
         if (OnTurnStateChanged != null) OnTurnStateChanged.Invoke(turnState);

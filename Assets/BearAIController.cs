@@ -10,9 +10,6 @@ public class BearAIController : MonoBehaviour
     private Transform throwOrigin;
 
     [SerializeField]
-    private Transform target;
-
-    [SerializeField]
     private GameObject spawn;
 
     [SerializeField]
@@ -22,6 +19,17 @@ public class BearAIController : MonoBehaviour
     private float throwInterval = 3f;
 
     private float lastShotTime;
+
+    private Transform Target
+    {
+        get
+        {
+            BearPongBucket[] bearPongBuckets = GameManager.Instance.BearPongBucketsBear;
+            int idx = Random.Range(0, bearPongBuckets.Length);
+            BearPongBucket bearPongBucket = bearPongBuckets[idx];
+            return bearPongBucket.ThrowTarget;
+        }
+    }
 
     #region MonoBehaviour
 
@@ -45,13 +53,13 @@ public class BearAIController : MonoBehaviour
 
         GameObject ball = Instantiate(spawn, throwOrigin.position, Quaternion.identity);
         Rigidbody ballRigidbody = ball.GetComponent<Rigidbody>();
-        ballRigidbody.velocity = GetBallisticVelocity(target, shotAngle.RandomFromRange());
+        ballRigidbody.velocity = GetBallisticVelocity(Target, shotAngle.RandomFromRange());
         Destroy(ball, 5f);
     }
 
     private Vector3 GetBallisticVelocity(Transform target, float angle)
     {
-        Vector3 dir = GetTargetPosition() - throwOrigin.position;
+        Vector3 dir = GetTargetPosition(target) - throwOrigin.position;
         float h = dir.y;
         dir.y = 0;
         float dist = dir.magnitude;
@@ -63,9 +71,9 @@ public class BearAIController : MonoBehaviour
         return vel * dir.normalized;
     }
 
-    private Vector3 GetTargetPosition()
+    private Vector3 GetTargetPosition(Transform t)
     {
-        return target.position;
+        return t.position;
     }
 
     #endregion

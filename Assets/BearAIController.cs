@@ -14,7 +14,7 @@ public class BearAIController : MonoBehaviour
     private GameObject spawn;
 
     [SerializeField]
-    private float shotAngle = 45f;
+    private MinMax shotAngle = new MinMax(35, 45);
 
     [SerializeField]
     private float throwInterval = 3f;
@@ -31,7 +31,7 @@ public class BearAIController : MonoBehaviour
 
             GameObject ball = Instantiate(spawn, throwOrigin.position, Quaternion.identity);
             Rigidbody ballRigidbody = ball.GetComponent<Rigidbody>();
-            ballRigidbody.velocity = GetBallisticVelocity(target, shotAngle);
+            ballRigidbody.velocity = GetBallisticVelocity(target, shotAngle.RandomFromRange());
             Destroy(ball, 5f);
         }
     }

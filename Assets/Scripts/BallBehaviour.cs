@@ -14,7 +14,6 @@ public class BallBehaviour : MonoBehaviour
         {
             _CupHit = true;
             Debug.Log("Cup Hit, another throw!");
-            Destroy(gameObject);
         }
     }
 

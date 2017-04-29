@@ -112,6 +112,8 @@ public class ObjectPickup : MonoBehaviour
             fJoint.connectedBody = null;
 
             throwing = true;
+
+            Debug.Log((rigidbody.GetComponentInParent<BallBehaviour>() != null) + " rigidbody");
         }
     }
 }

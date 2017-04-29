@@ -6,7 +6,8 @@ using System.Collections.Generic;
  * Basic implementation of how to use a Vive controller as an input device.
  * Can only interact with items with InteractableBase component
  */
-public class WandController : MonoBehaviour {
+public class WandController : MonoBehaviour
+{
     private Valve.VR.EVRButtonId gripButton = Valve.VR.EVRButtonId.k_EButton_Grip;
     private Valve.VR.EVRButtonId triggerButton = Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger;
 
@@ -19,26 +20,32 @@ public class WandController : MonoBehaviour {
     private InteractableBase interactingItem;
 
     // Use this for initialization
-    void Start() {
+    void Start()
+    {
         trackedObj = GetComponent<SteamVR_TrackedObject>();
     }
 
     // Update is called once per frame
-    void Update() {
-        if (controller == null) {
+    void Update()
+    {
+        if (controller == null)
+        {
             Debug.Log("Controller not initialized");
             return;
         }
 
-        if (controller.GetPressDown(gripButton) || controller.GetPressDown(triggerButton)) {
+        if (controller.GetPressDown(gripButton) || controller.GetPressDown(triggerButton))
+        {
             // Find the closest item to the hand in case there are multiple and interact with it
             float minDistance = float.MaxValue;
 
             float distance;
-            foreach (InteractableBase item in objectsHoveringOver) {
+            foreach (InteractableBase item in objectsHoveringOver)
+            {
                 distance = (item.transform.position - transform.position).sqrMagnitude;
 
-                if (distance < minDistance) {
+                if (distance < minDistance)
+                {
                     minDistance = distance;
                     closestItem = item;
                 }
@@ -47,39 +54,48 @@ public class WandController : MonoBehaviour {
             interactingItem = closestItem;
             closestItem = null;
 
-            if (interactingItem) {
+            if (interactingItem)
+            {
                 // Begin Interaction should already end interaction from previous
-                if (controller.GetPressDown(gripButton)) {
+                if (controller.GetPressDown(gripButton))
+                {
                     interactingItem.OnGripPressDown(this);
                 }
-                if (controller.GetPressDown(triggerButton)) {
+                if (controller.GetPressDown(triggerButton))
+                {
                     interactingItem.OnTriggerPressDown(this);
                 }
             }
         }
 
-        if (controller.GetPressUp(gripButton) && interactingItem != null) {
+        if (controller.GetPressUp(gripButton) && interactingItem != null)
+        {
             //interactingItem.EndInteraction(this);
             interactingItem.OnGripPressUp(this);
         }
 
-        if (controller.GetPressDown(triggerButton) && interactingItem != null) {
+        if (controller.GetPressDown(triggerButton) && interactingItem != null)
+        {
             interactingItem.OnTriggerPressUp(this);
         }
     }
 
     // Adds all colliding items to a HashSet for processing which is closest
-    private void OnTriggerEnter(Collider collider) {
+    private void OnTriggerEnter(Collider collider)
+    {
         InteractableBase collidedItem = collider.GetComponent<InteractableBase>();
-        if (collidedItem) {
+        if (collidedItem)
+        {
             objectsHoveringOver.Add(collidedItem);
         }
     }
 
     // Remove all items no longer colliding with to avoid further processing
-    private void OnTriggerExit(Collider collider) {
+    private void OnTriggerExit(Collider collider)
+    {
         InteractableBase collidedItem = collider.GetComponent<InteractableBase>();
-        if (collidedItem) {
+        if (collidedItem)
+        {
             objectsHoveringOver.Remove(collidedItem);
         }
     }

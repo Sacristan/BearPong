@@ -11,7 +11,7 @@ public class BallBehaviour : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 		if (other.tag == GameTags.PlayerCup) {
-			other.GetComponentInParent<AudioSource> ().Play ();			
+			other.GetComponentInParent<AudioSource> ().Play ();
 		}
 
         if (!_CupHit)
@@ -21,13 +21,14 @@ public class BallBehaviour : MonoBehaviour
             if (other.tag == GameTags.BearCup)
             {
                 DrunkEffectController.Instance.GetDrunk();
-                Debug.Log("Cup Hit, bear gets another throw!");
+                //Debug.Log("Cup Hit, bear gets another throw!");
             }
             else if (other.tag == GameTags.PlayerCup)
             {
-                Debug.Log("Cup Hit, player gets another throw!");
+                //Debug.Log("Cup Hit, player gets another throw!");
             }
         }
+		//Debug.Log (other.tag);
     }
 
 	public void CallSFX(){

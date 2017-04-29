@@ -41,6 +41,22 @@ public class DrunkBehaviourBear : MonoBehaviour
         }
     }
 
+    public float MinDrunkenness
+    {
+        get
+        {
+            return _MinDrunkenness;
+        }
+    }
+
+    public float MaxDrunkenness
+    {
+        get
+        {
+            return _MaxDrunkenness;
+        }
+    }
+
     private void Start()
     {
         //_Camera = GetComponent<Camera>();

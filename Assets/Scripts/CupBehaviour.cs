@@ -8,7 +8,7 @@ public class CupBehaviour : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Pickable") OnBallEnter(transform, other.transform);
+        /*if (other.tag == "Pickable")*/ OnBallEnter(transform, other.transform);
     }
 
     private void Start()

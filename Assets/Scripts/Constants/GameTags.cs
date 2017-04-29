@@ -1,5 +1,6 @@
 ﻿public static class GameTags
 {
     public const string Pickable = "Pickable";
-    public const string Cup = "Cup";
+    public const string BearCup = "BearCup";
+    public const string PlayerCup = "PlayerCup";
 }

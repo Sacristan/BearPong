@@ -1,11 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityStandardAssets.ImageEffects;
 
 [RequireComponent(typeof(Camera))]
 [RequireComponent(typeof(VignetteAndChromaticAberration))]
-public class DrunkEffectController : MonoBehaviour
+public class DrunkEffectController : Singleton<DrunkEffectController>
 {
     [SerializeField]
     [Range(0f, 1f)]
@@ -15,6 +13,11 @@ public class DrunkEffectController : MonoBehaviour
 
     private Camera _camera;
     private VignetteAndChromaticAberration _vignetteAndChromaticAberration;
+
+    public void GetDrunk()
+    {
+        drunkinessLevel += 0.3f;
+    }
 
     #region MonoBehaviour
 

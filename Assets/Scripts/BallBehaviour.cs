@@ -10,11 +10,18 @@ public class BallBehaviour : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!_CupHit && (other.tag == GameTags.Cup))
+        if (!_CupHit)
         {
             _CupHit = true;
-            Debug.Log("Cup Hit, another throw!");
-            //TODO drunk other
+            if (other.tag == GameTags.BearCup)
+            {
+                DrunkEffectController.Instance.GetDrunk();
+                Debug.Log("Cup Hit, bear gets another throw!");
+            }
+            else if (other.tag == GameTags.PlayerCup)
+            {
+                Debug.Log("Cup Hit, player gets another throw!");
+            }
         }
     }
 

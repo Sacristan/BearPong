@@ -89,6 +89,7 @@ public class BearAIController : Singleton<BearAIController>
         GameObject ball = Instantiate(spawn, throwOrigin.position, Quaternion.identity);
         ball.GetComponent<BallBehaviour>().MarkCatcheable();
         Rigidbody ballRigidbody = ball.GetComponent<Rigidbody>();
+		GetComponent<AudioSource> ().Play ();
 		ball.tag = GameTags.Untagged;
         ballRigidbody.velocity = GetBallisticVelocity(Target, shotAngle.RandomFromRange());
         Destroy(ball, 5f);

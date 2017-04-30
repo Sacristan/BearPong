@@ -27,6 +27,8 @@ public class BearAIController : Singleton<BearAIController>
 
     private List<BearPongBucket> bearPongBuckets;
 
+	private AudioSource _audioSource;
+
     private Transform Target
     {
         get
@@ -55,6 +57,7 @@ public class BearAIController : Singleton<BearAIController>
 
     private void Start()
     {
+		_audioSource = GetComponent<AudioSource> ();
         GameManager.Instance.OnTurnStateChanged += Instance_OnTurnStateChanged;
         this.bearPongBuckets = new List<BearPongBucket>(GameManager.Instance.BearPongBucketsBear);
     }
@@ -89,6 +92,9 @@ public class BearAIController : Singleton<BearAIController>
         GameObject ball = Instantiate(spawn, throwOrigin.position, Quaternion.identity);
         ball.GetComponent<BallBehaviour>().MarkCatcheable();
         Rigidbody ballRigidbody = ball.GetComponent<Rigidbody>();
+
+		if(_audioSource!=null) _audioSource.Play();
+
 		ball.tag = GameTags.Untagged;
         ballRigidbody.velocity = GetBallisticVelocity(Target, shotAngle.RandomFromRange());
         Destroy(ball, 5f);

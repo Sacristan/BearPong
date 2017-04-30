@@ -10,7 +10,7 @@ public class DrunkEffectController : Singleton<DrunkEffectController>
     private float drunkinessLevel = 0f;
 
     private readonly MinMax cameraFOVMinMax = new MinMax(60, 90);
-    private readonly MinMax blurMinMax = new MinMax(0, 3);
+    private readonly MinMax blurMinMax = new MinMax(0, 7);
 
     private Camera _camera;
     private VignetteAndChromaticAberration _vignetteAndChromaticAberration;

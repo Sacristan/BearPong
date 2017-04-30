@@ -1,0 +1,781 @@
+fileFormatVersion: 2
+guid: 2da755bfd20506c43b1608b3563a81b8
+timeCreated: 1493533087
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Armature
+    100002: Armature.001
+    100004: Armature.002
+    100006: Armature.003
+    100008: Armature.004
+    100010: Armature.005
+    100012: Armature.006
+    100014: Armature.007
+    100016: Armature.008
+    100018: Armature.009
+    100020: Armature.010
+    100022: Armature.011
+    100024: Armature.012
+    100026: Armature.013
+    100028: Armature.014
+    100030: Armature.015
+    100032: Armature.016
+    100034: Armature.017
+    100036: Armature.018
+    100038: Armature.019
+    100040: Armature.020
+    100042: Armature.021
+    100044: Armature.022
+    100046: Bone
+    100048: Bone 1
+    100050: Bone 10
+    100052: Bone 11
+    100054: Bone 12
+    100056: Bone 13
+    100058: Bone 14
+    100060: Bone 15
+    100062: Bone 16
+    100064: Bone 17
+    100066: Bone 18
+    100068: Bone 19
+    100070: Bone 2
+    100072: Bone 20
+    100074: Bone 21
+    100076: Bone 22
+    100078: Bone 3
+    100080: Bone 4
+    100082: Bone 5
+    100084: Bone 6
+    100086: Bone 7
+    100088: Bone 8
+    100090: Bone 9
+    100092: Bone_end
+    100094: Bone_end 1
+    100096: Bone_end 10
+    100098: Bone_end 11
+    100100: Bone_end 12
+    100102: Bone_end 13
+    100104: Bone_end 14
+    100106: Bone_end 15
+    100108: Bone_end 16
+    100110: Bone_end 17
+    100112: Bone_end 18
+    100114: Bone_end 19
+    100116: Bone_end 2
+    100118: Bone_end 20
+    100120: Bone_end 21
+    100122: Bone_end 22
+    100124: Bone_end 3
+    100126: Bone_end 4
+    100128: Bone_end 5
+    100130: Bone_end 6
+    100132: Bone_end 7
+    100134: Bone_end 8
+    100136: Bone_end 9
+    100138: Camera
+    100140: Camera.001
+    100142: Cube
+    100144: Cube.001
+    100146: Cube.002
+    100148: Cube.003
+    100150: Cube.004
+    100152: Cube.005
+    100154: Cube.006
+    100156: Cube.007
+    100158: Cube.008
+    100160: Cube.009
+    100162: Cube.010
+    100164: Cube.011
+    100166: Cube.013
+    100168: Cube.014
+    100170: Cube.015
+    100172: Cube.016
+    100174: Cube.017
+    100176: Cube.018
+    100178: Cube.019
+    100180: Cube.020
+    100182: Cube.021
+    100184: Cube.023
+    100186: Cube.024
+    100188: //RootNode
+    100190: Lamp
+    100192: Lamp.001
+    400000: Armature
+    400002: Armature.001
+    400004: Armature.002
+    400006: Armature.003
+    400008: Armature.004
+    400010: Armature.005
+    400012: Armature.006
+    400014: Armature.007
+    400016: Armature.008
+    400018: Armature.009
+    400020: Armature.010
+    400022: Armature.011
+    400024: Armature.012
+    400026: Armature.013
+    400028: Armature.014
+    400030: Armature.015
+    400032: Armature.016
+    400034: Armature.017
+    400036: Armature.018
+    400038: Armature.019
+    400040: Armature.020
+    400042: Armature.021
+    400044: Armature.022
+    400046: Bone
+    400048: Bone 1
+    400050: Bone 10
+    400052: Bone 11
+    400054: Bone 12
+    400056: Bone 13
+    400058: Bone 14
+    400060: Bone 15
+    400062: Bone 16
+    400064: Bone 17
+    400066: Bone 18
+    400068: Bone 19
+    400070: Bone 2
+    400072: Bone 20
+    400074: Bone 21
+    400076: Bone 22
+    400078: Bone 3
+    400080: Bone 4
+    400082: Bone 5
+    400084: Bone 6
+    400086: Bone 7
+    400088: Bone 8
+    400090: Bone 9
+    400092: Bone_end
+    400094: Bone_end 1
+    400096: Bone_end 10
+    400098: Bone_end 11
+    400100: Bone_end 12
+    400102: Bone_end 13
+    400104: Bone_end 14
+    400106: Bone_end 15
+    400108: Bone_end 16
+    400110: Bone_end 17
+    400112: Bone_end 18
+    400114: Bone_end 19
+    400116: Bone_end 2
+    400118: Bone_end 20
+    400120: Bone_end 21
+    400122: Bone_end 22
+    400124: Bone_end 3
+    400126: Bone_end 4
+    400128: Bone_end 5
+    400130: Bone_end 6
+    400132: Bone_end 7
+    400134: Bone_end 8
+    400136: Bone_end 9
+    400138: Camera
+    400140: Camera.001
+    400142: Cube
+    400144: Cube.001
+    400146: Cube.002
+    400148: Cube.003
+    400150: Cube.004
+    400152: Cube.005
+    400154: Cube.006
+    400156: Cube.007
+    400158: Cube.008
+    400160: Cube.009
+    400162: Cube.010
+    400164: Cube.011
+    400166: Cube.013
+    400168: Cube.014
+    400170: Cube.015
+    400172: Cube.016
+    400174: Cube.017
+    400176: Cube.018
+    400178: Cube.019
+    400180: Cube.020
+    400182: Cube.021
+    400184: Cube.023
+    400186: Cube.024
+    400188: //RootNode
+    400190: Lamp
+    400192: Lamp.001
+    2300000: Cube
+    3300000: Cube
+    4300000: Cube.002
+    4300002: Cube.003
+    4300004: Cube.004
+    4300006: Cube.005
+    4300008: Cube.006
+    4300010: Cube.007
+    4300012: Cube.008
+    4300014: Cube.009
+    4300016: Cube.010
+    4300018: Cube.011
+    4300020: Cube.013
+    4300022: Cube.014
+    4300024: Cube.015
+    4300026: Cube.016
+    4300028: Cube.017
+    4300030: Cube.018
+    4300032: Cube.019
+    4300034: Cube.020
+    4300036: Cube.021
+    4300038: Cube.023
+    4300040: Cube.024
+    4300042: Cube.001
+    4300044: Cube
+    7400000: Armature.022|Armature.002Action
+    7400002: Armature.022|Armature.003Action
+    7400004: Armature.022|Armature.004Action
+    7400006: Armature.022|Armature.005Action
+    7400008: Armature.022|Armature.006Action
+    7400010: Armature.022|Armature.007Action
+    7400012: Armature.022|Armature.008Action
+    7400014: Armature.022|Armature.009Action
+    7400016: Armature.022|Armature.010Action
+    7400018: Armature.022|Armature.011Action
+    7400020: Armature.022|Armature.012Action
+    7400022: Armature.022|Armature.013Action
+    7400024: Armature.022|Armature.014Action
+    7400026: Armature.022|Armature.015Action
+    7400028: Armature.022|Armature.016Action
+    7400030: Armature.022|Armature.018Action
+    7400032: Armature.022|Armature.019Action
+    7400034: Armature.022|Armature.020Action
+    7400036: Armature.022|Armature.021Action
+    7400038: Armature.022|Armature.022Action
+    7400040: Armature.022|ArmatureAction
+    7400042: Armature.022|Cube.004Action
+    7400044: Armature.021|Armature.002Action
+    7400046: Armature.021|Armature.003Action
+    7400048: Armature.021|Armature.004Action
+    7400050: Armature.021|Armature.005Action
+    7400052: Armature.021|Armature.006Action
+    7400054: Armature.021|Armature.007Action
+    7400056: Armature.021|Armature.008Action
+    7400058: Armature.021|Armature.009Action
+    7400060: Armature.021|Armature.010Action
+    7400062: Armature.021|Armature.011Action
+    7400064: Armature.021|Armature.012Action
+    7400066: Armature.021|Armature.013Action
+    7400068: Armature.021|Armature.014Action
+    7400070: Armature.021|Armature.015Action
+    7400072: Armature.021|Armature.016Action
+    7400074: Armature.021|Armature.018Action
+    7400076: Armature.021|Armature.019Action
+    7400078: Armature.021|Armature.020Action
+    7400080: Armature.021|Armature.021Action
+    7400082: Armature.021|Armature.022Action
+    7400084: Armature.021|ArmatureAction
+    7400086: Armature.021|Cube.004Action
+    7400088: Armature.020|Armature.002Action
+    7400090: Armature.020|Armature.003Action
+    7400092: Armature.020|Armature.004Action
+    7400094: Armature.020|Armature.005Action
+    7400096: Armature.020|Armature.006Action
+    7400098: Armature.020|Armature.007Action
+    7400100: Armature.020|Armature.008Action
+    7400102: Armature.020|Armature.009Action
+    7400104: Armature.020|Armature.010Action
+    7400106: Armature.020|Armature.011Action
+    7400108: Armature.020|Armature.012Action
+    7400110: Armature.020|Armature.013Action
+    7400112: Armature.020|Armature.014Action
+    7400114: Armature.020|Armature.015Action
+    7400116: Armature.020|Armature.016Action
+    7400118: Armature.020|Armature.018Action
+    7400120: Armature.020|Armature.019Action
+    7400122: Armature.020|Armature.020Action
+    7400124: Armature.020|Armature.021Action
+    7400126: Armature.020|Armature.022Action
+    7400128: Armature.020|ArmatureAction
+    7400130: Armature.020|Cube.004Action
+    7400132: Armature.019|Armature.002Action
+    7400134: Armature.019|Armature.003Action
+    7400136: Armature.019|Armature.004Action
+    7400138: Armature.019|Armature.005Action
+    7400140: Armature.019|Armature.006Action
+    7400142: Armature.019|Armature.007Action
+    7400144: Armature.019|Armature.008Action
+    7400146: Armature.019|Armature.009Action
+    7400148: Armature.019|Armature.010Action
+    7400150: Armature.019|Armature.011Action
+    7400152: Armature.019|Armature.012Action
+    7400154: Armature.019|Armature.013Action
+    7400156: Armature.019|Armature.014Action
+    7400158: Armature.019|Armature.015Action
+    7400160: Armature.019|Armature.016Action
+    7400162: Armature.019|Armature.018Action
+    7400164: Armature.019|Armature.019Action
+    7400166: Armature.019|Armature.020Action
+    7400168: Armature.019|Armature.021Action
+    7400170: Armature.019|Armature.022Action
+    7400172: Armature.019|ArmatureAction
+    7400174: Armature.019|Cube.004Action
+    7400176: Armature.018|Armature.002Action
+    7400178: Armature.018|Armature.003Action
+    7400180: Armature.018|Armature.004Action
+    7400182: Armature.018|Armature.005Action
+    7400184: Armature.018|Armature.006Action
+    7400186: Armature.018|Armature.007Action
+    7400188: Armature.018|Armature.008Action
+    7400190: Armature.018|Armature.009Action
+    7400192: Armature.018|Armature.010Action
+    7400194: Armature.018|Armature.011Action
+    7400196: Armature.018|Armature.012Action
+    7400198: Armature.018|Armature.013Action
+    7400200: Armature.018|Armature.014Action
+    7400202: Armature.018|Armature.015Action
+    7400204: Armature.018|Armature.016Action
+    7400206: Armature.018|Armature.018Action
+    7400208: Armature.018|Armature.019Action
+    7400210: Armature.018|Armature.020Action
+    7400212: Armature.018|Armature.021Action
+    7400214: Armature.018|Armature.022Action
+    7400216: Armature.018|ArmatureAction
+    7400218: Armature.018|Cube.004Action
+    7400220: Armature.016|Armature.002Action
+    7400222: Armature.016|Armature.003Action
+    7400224: Armature.016|Armature.004Action
+    7400226: Armature.016|Armature.005Action
+    7400228: Armature.016|Armature.006Action
+    7400230: Armature.016|Armature.007Action
+    7400232: Armature.016|Armature.008Action
+    7400234: Armature.016|Armature.009Action
+    7400236: Armature.016|Armature.010Action
+    7400238: Armature.016|Armature.011Action
+    7400240: Armature.016|Armature.012Action
+    7400242: Armature.016|Armature.013Action
+    7400244: Armature.016|Armature.014Action
+    7400246: Armature.016|Armature.015Action
+    7400248: Armature.016|Armature.016Action
+    7400250: Armature.016|Armature.018Action
+    7400252: Armature.016|Armature.019Action
+    7400254: Armature.016|Armature.020Action
+    7400256: Armature.016|Armature.021Action
+    7400258: Armature.016|Armature.022Action
+    7400260: Armature.016|ArmatureAction
+    7400262: Armature.016|Cube.004Action
+    7400264: Armature.015|Armature.002Action
+    7400266: Armature.015|Armature.003Action
+    7400268: Armature.015|Armature.004Action
+    7400270: Armature.015|Armature.005Action
+    7400272: Armature.015|Armature.006Action
+    7400274: Armature.015|Armature.007Action
+    7400276: Armature.015|Armature.008Action
+    7400278: Armature.015|Armature.009Action
+    7400280: Armature.015|Armature.010Action
+    7400282: Armature.015|Armature.011Action
+    7400284: Armature.015|Armature.012Action
+    7400286: Armature.015|Armature.013Action
+    7400288: Armature.015|Armature.014Action
+    7400290: Armature.015|Armature.015Action
+    7400292: Armature.015|Armature.016Action
+    7400294: Armature.015|Armature.018Action
+    7400296: Armature.015|Armature.019Action
+    7400298: Armature.015|Armature.020Action
+    7400300: Armature.015|Armature.021Action
+    7400302: Armature.015|Armature.022Action
+    7400304: Armature.015|ArmatureAction
+    7400306: Armature.015|Cube.004Action
+    7400308: Armature.014|Armature.002Action
+    7400310: Armature.014|Armature.003Action
+    7400312: Armature.014|Armature.004Action
+    7400314: Armature.014|Armature.005Action
+    7400316: Armature.014|Armature.006Action
+    7400318: Armature.014|Armature.007Action
+    7400320: Armature.014|Armature.008Action
+    7400322: Armature.014|Armature.009Action
+    7400324: Armature.014|Armature.010Action
+    7400326: Armature.014|Armature.011Action
+    7400328: Armature.014|Armature.012Action
+    7400330: Armature.014|Armature.013Action
+    7400332: Armature.014|Armature.014Action
+    7400334: Armature.014|Armature.015Action
+    7400336: Armature.014|Armature.016Action
+    7400338: Armature.014|Armature.018Action
+    7400340: Armature.014|Armature.019Action
+    7400342: Armature.014|Armature.020Action
+    7400344: Armature.014|Armature.021Action
+    7400346: Armature.014|Armature.022Action
+    7400348: Armature.014|ArmatureAction
+    7400350: Armature.014|Cube.004Action
+    7400352: Armature.013|Armature.002Action
+    7400354: Armature.013|Armature.003Action
+    7400356: Armature.013|Armature.004Action
+    7400358: Armature.013|Armature.005Action
+    7400360: Armature.013|Armature.006Action
+    7400362: Armature.013|Armature.007Action
+    7400364: Armature.013|Armature.008Action
+    7400366: Armature.013|Armature.009Action
+    7400368: Armature.013|Armature.010Action
+    7400370: Armature.013|Armature.011Action
+    7400372: Armature.013|Armature.012Action
+    7400374: Armature.013|Armature.013Action
+    7400376: Armature.013|Armature.014Action
+    7400378: Armature.013|Armature.015Action
+    7400380: Armature.013|Armature.016Action
+    7400382: Armature.013|Armature.018Action
+    7400384: Armature.013|Armature.019Action
+    7400386: Armature.013|Armature.020Action
+    7400388: Armature.013|Armature.021Action
+    7400390: Armature.013|Armature.022Action
+    7400392: Armature.013|ArmatureAction
+    7400394: Armature.013|Cube.004Action
+    7400396: Armature.012|Armature.002Action
+    7400398: Armature.012|Armature.003Action
+    7400400: Armature.012|Armature.004Action
+    7400402: Armature.012|Armature.005Action
+    7400404: Armature.012|Armature.006Action
+    7400406: Armature.012|Armature.007Action
+    7400408: Armature.012|Armature.008Action
+    7400410: Armature.012|Armature.009Action
+    7400412: Armature.012|Armature.010Action
+    7400414: Armature.012|Armature.011Action
+    7400416: Armature.012|Armature.012Action
+    7400418: Armature.012|Armature.013Action
+    7400420: Armature.012|Armature.014Action
+    7400422: Armature.012|Armature.015Action
+    7400424: Armature.012|Armature.016Action
+    7400426: Armature.012|Armature.018Action
+    7400428: Armature.012|Armature.019Action
+    7400430: Armature.012|Armature.020Action
+    7400432: Armature.012|Armature.021Action
+    7400434: Armature.012|Armature.022Action
+    7400436: Armature.012|ArmatureAction
+    7400438: Armature.012|Cube.004Action
+    7400440: Armature.011|Armature.002Action
+    7400442: Armature.011|Armature.003Action
+    7400444: Armature.011|Armature.004Action
+    7400446: Armature.011|Armature.005Action
+    7400448: Armature.011|Armature.006Action
+    7400450: Armature.011|Armature.007Action
+    7400452: Armature.011|Armature.008Action
+    7400454: Armature.011|Armature.009Action
+    7400456: Armature.011|Armature.010Action
+    7400458: Armature.011|Armature.011Action
+    7400460: Armature.011|Armature.012Action
+    7400462: Armature.011|Armature.013Action
+    7400464: Armature.011|Armature.014Action
+    7400466: Armature.011|Armature.015Action
+    7400468: Armature.011|Armature.016Action
+    7400470: Armature.011|Armature.018Action
+    7400472: Armature.011|Armature.019Action
+    7400474: Armature.011|Armature.020Action
+    7400476: Armature.011|Armature.021Action
+    7400478: Armature.011|Armature.022Action
+    7400480: Armature.011|ArmatureAction
+    7400482: Armature.011|Cube.004Action
+    7400484: Armature.010|Armature.002Action
+    7400486: Armature.010|Armature.003Action
+    7400488: Armature.010|Armature.004Action
+    7400490: Armature.010|Armature.005Action
+    7400492: Armature.010|Armature.006Action
+    7400494: Armature.010|Armature.007Action
+    7400496: Armature.010|Armature.008Action
+    7400498: Armature.010|Armature.009Action
+    7400500: Armature.010|Armature.010Action
+    7400502: Armature.010|Armature.011Action
+    7400504: Armature.010|Armature.012Action
+    7400506: Armature.010|Armature.013Action
+    7400508: Armature.010|Armature.014Action
+    7400510: Armature.010|Armature.015Action
+    7400512: Armature.010|Armature.016Action
+    7400514: Armature.010|Armature.018Action
+    7400516: Armature.010|Armature.019Action
+    7400518: Armature.010|Armature.020Action
+    7400520: Armature.010|Armature.021Action
+    7400522: Armature.010|Armature.022Action
+    7400524: Armature.010|ArmatureAction
+    7400526: Armature.010|Cube.004Action
+    7400528: Armature.009|Armature.002Action
+    7400530: Armature.009|Armature.003Action
+    7400532: Armature.009|Armature.004Action
+    7400534: Armature.009|Armature.005Action
+    7400536: Armature.009|Armature.006Action
+    7400538: Armature.009|Armature.007Action
+    7400540: Armature.009|Armature.008Action
+    7400542: Armature.009|Armature.009Action
+    7400544: Armature.009|Armature.010Action
+    7400546: Armature.009|Armature.011Action
+    7400548: Armature.009|Armature.012Action
+    7400550: Armature.009|Armature.013Action
+    7400552: Armature.009|Armature.014Action
+    7400554: Armature.009|Armature.015Action
+    7400556: Armature.009|Armature.016Action
+    7400558: Armature.009|Armature.018Action
+    7400560: Armature.009|Armature.019Action
+    7400562: Armature.009|Armature.020Action
+    7400564: Armature.009|Armature.021Action
+    7400566: Armature.009|Armature.022Action
+    7400568: Armature.009|ArmatureAction
+    7400570: Armature.009|Cube.004Action
+    7400572: Armature.008|Armature.002Action
+    7400574: Armature.008|Armature.003Action
+    7400576: Armature.008|Armature.004Action
+    7400578: Armature.008|Armature.005Action
+    7400580: Armature.008|Armature.006Action
+    7400582: Armature.008|Armature.007Action
+    7400584: Armature.008|Armature.008Action
+    7400586: Armature.008|Armature.009Action
+    7400588: Armature.008|Armature.010Action
+    7400590: Armature.008|Armature.011Action
+    7400592: Armature.008|Armature.012Action
+    7400594: Armature.008|Armature.013Action
+    7400596: Armature.008|Armature.014Action
+    7400598: Armature.008|Armature.015Action
+    7400600: Armature.008|Armature.016Action
+    7400602: Armature.008|Armature.018Action
+    7400604: Armature.008|Armature.019Action
+    7400606: Armature.008|Armature.020Action
+    7400608: Armature.008|Armature.021Action
+    7400610: Armature.008|Armature.022Action
+    7400612: Armature.008|ArmatureAction
+    7400614: Armature.008|Cube.004Action
+    7400616: Armature.007|Armature.002Action
+    7400618: Armature.007|Armature.003Action
+    7400620: Armature.007|Armature.004Action
+    7400622: Armature.007|Armature.005Action
+    7400624: Armature.007|Armature.006Action
+    7400626: Armature.007|Armature.007Action
+    7400628: Armature.007|Armature.008Action
+    7400630: Armature.007|Armature.009Action
+    7400632: Armature.007|Armature.010Action
+    7400634: Armature.007|Armature.011Action
+    7400636: Armature.007|Armature.012Action
+    7400638: Armature.007|Armature.013Action
+    7400640: Armature.007|Armature.014Action
+    7400642: Armature.007|Armature.015Action
+    7400644: Armature.007|Armature.016Action
+    7400646: Armature.007|Armature.018Action
+    7400648: Armature.007|Armature.019Action
+    7400650: Armature.007|Armature.020Action
+    7400652: Armature.007|Armature.021Action
+    7400654: Armature.007|Armature.022Action
+    7400656: Armature.007|ArmatureAction
+    7400658: Armature.007|Cube.004Action
+    7400660: Armature.006|Armature.002Action
+    7400662: Armature.006|Armature.003Action
+    7400664: Armature.006|Armature.004Action
+    7400666: Armature.006|Armature.005Action
+    7400668: Armature.006|Armature.006Action
+    7400670: Armature.006|Armature.007Action
+    7400672: Armature.006|Armature.008Action
+    7400674: Armature.006|Armature.009Action
+    7400676: Armature.006|Armature.010Action
+    7400678: Armature.006|Armature.011Action
+    7400680: Armature.006|Armature.012Action
+    7400682: Armature.006|Armature.013Action
+    7400684: Armature.006|Armature.014Action
+    7400686: Armature.006|Armature.015Action
+    7400688: Armature.006|Armature.016Action
+    7400690: Armature.006|Armature.018Action
+    7400692: Armature.006|Armature.019Action
+    7400694: Armature.006|Armature.020Action
+    7400696: Armature.006|Armature.021Action
+    7400698: Armature.006|Armature.022Action
+    7400700: Armature.006|ArmatureAction
+    7400702: Armature.006|Cube.004Action
+    7400704: Armature.005|Armature.002Action
+    7400706: Armature.005|Armature.003Action
+    7400708: Armature.005|Armature.004Action
+    7400710: Armature.005|Armature.005Action
+    7400712: Armature.005|Armature.006Action
+    7400714: Armature.005|Armature.007Action
+    7400716: Armature.005|Armature.008Action
+    7400718: Armature.005|Armature.009Action
+    7400720: Armature.005|Armature.010Action
+    7400722: Armature.005|Armature.011Action
+    7400724: Armature.005|Armature.012Action
+    7400726: Armature.005|Armature.013Action
+    7400728: Armature.005|Armature.014Action
+    7400730: Armature.005|Armature.015Action
+    7400732: Armature.005|Armature.016Action
+    7400734: Armature.005|Armature.018Action
+    7400736: Armature.005|Armature.019Action
+    7400738: Armature.005|Armature.020Action
+    7400740: Armature.005|Armature.021Action
+    7400742: Armature.005|Armature.022Action
+    7400744: Armature.005|ArmatureAction
+    7400746: Armature.005|Cube.004Action
+    7400748: Armature.004|Armature.002Action
+    7400750: Armature.004|Armature.003Action
+    7400752: Armature.004|Armature.004Action
+    7400754: Armature.004|Armature.005Action
+    7400756: Armature.004|Armature.006Action
+    7400758: Armature.004|Armature.007Action
+    7400760: Armature.004|Armature.008Action
+    7400762: Armature.004|Armature.009Action
+    7400764: Armature.004|Armature.010Action
+    7400766: Armature.004|Armature.011Action
+    7400768: Armature.004|Armature.012Action
+    7400770: Armature.004|Armature.013Action
+    7400772: Armature.004|Armature.014Action
+    7400774: Armature.004|Armature.015Action
+    7400776: Armature.004|Armature.016Action
+    7400778: Armature.004|Armature.018Action
+    7400780: Armature.004|Armature.019Action
+    7400782: Armature.004|Armature.020Action
+    7400784: Armature.004|Armature.021Action
+    7400786: Armature.004|Armature.022Action
+    7400788: Armature.004|ArmatureAction
+    7400790: Armature.004|Cube.004Action
+    7400792: Armature.003|Armature.002Action
+    7400794: Armature.003|Armature.003Action
+    7400796: Armature.003|Armature.004Action
+    7400798: Armature.003|Armature.005Action
+    7400800: Armature.003|Armature.006Action
+    7400802: Armature.003|Armature.007Action
+    7400804: Armature.003|Armature.008Action
+    7400806: Armature.003|Armature.009Action
+    7400808: Armature.003|Armature.010Action
+    7400810: Armature.003|Armature.011Action
+    7400812: Armature.003|Armature.012Action
+    7400814: Armature.003|Armature.013Action
+    7400816: Armature.003|Armature.014Action
+    7400818: Armature.003|Armature.015Action
+    7400820: Armature.003|Armature.016Action
+    7400822: Armature.003|Armature.018Action
+    7400824: Armature.003|Armature.019Action
+    7400826: Armature.003|Armature.020Action
+    7400828: Armature.003|Armature.021Action
+    7400830: Armature.003|Armature.022Action
+    7400832: Armature.003|ArmatureAction
+    7400834: Armature.003|Cube.004Action
+    7400836: Armature.002|Armature.002Action
+    7400838: Armature.002|Armature.003Action
+    7400840: Armature.002|Armature.004Action
+    7400842: Armature.002|Armature.005Action
+    7400844: Armature.002|Armature.006Action
+    7400846: Armature.002|Armature.007Action
+    7400848: Armature.002|Armature.008Action
+    7400850: Armature.002|Armature.009Action
+    7400852: Armature.002|Armature.010Action
+    7400854: Armature.002|Armature.011Action
+    7400856: Armature.002|Armature.012Action
+    7400858: Armature.002|Armature.013Action
+    7400860: Armature.002|Armature.014Action
+    7400862: Armature.002|Armature.015Action
+    7400864: Armature.002|Armature.016Action
+    7400866: Armature.002|Armature.018Action
+    7400868: Armature.002|Armature.019Action
+    7400870: Armature.002|Armature.020Action
+    7400872: Armature.002|Armature.021Action
+    7400874: Armature.002|Armature.022Action
+    7400876: Armature.002|ArmatureAction
+    7400878: Armature.002|Cube.004Action
+    7400880: Armature|Armature.002Action
+    7400882: Armature|Armature.003Action
+    7400884: Armature|Armature.004Action
+    7400886: Armature|Armature.005Action
+    7400888: Armature|Armature.006Action
+    7400890: Armature|Armature.007Action
+    7400892: Armature|Armature.008Action
+    7400894: Armature|Armature.009Action
+    7400896: Armature|Armature.010Action
+    7400898: Armature|Armature.011Action
+    7400900: Armature|Armature.012Action
+    7400902: Armature|Armature.013Action
+    7400904: Armature|Armature.014Action
+    7400906: Armature|Armature.015Action
+    7400908: Armature|Armature.016Action
+    7400910: Armature|Armature.018Action
+    7400912: Armature|Armature.019Action
+    7400914: Armature|Armature.020Action
+    7400916: Armature|Armature.021Action
+    7400918: Armature|Armature.022Action
+    7400920: Armature|ArmatureAction
+    7400922: Armature|Cube.004Action
+    9500000: //RootNode
+    13700000: Cube.001
+    13700002: Cube.002
+    13700004: Cube.003
+    13700006: Cube.004
+    13700008: Cube.005
+    13700010: Cube.006
+    13700012: Cube.007
+    13700014: Cube.008
+    13700016: Cube.009
+    13700018: Cube.010
+    13700020: Cube.011
+    13700022: Cube.013
+    13700024: Cube.014
+    13700026: Cube.015
+    13700028: Cube.016
+    13700030: Cube.017
+    13700032: Cube.018
+    13700034: Cube.019
+    13700036: Cube.020
+    13700038: Cube.021
+    13700040: Cube.023
+    13700042: Cube.024
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

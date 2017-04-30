@@ -4,7 +4,7 @@ using UnityStandardAssets.ImageEffects;
 
 public class GameLostBehaviour : MonoBehaviour
 {
-    private void start()
+    private void Start()
     {
         StartCoroutine(Blackout());
     }

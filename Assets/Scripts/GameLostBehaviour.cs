@@ -6,6 +6,7 @@ public class GameLostBehaviour : MonoBehaviour
 {
     private void start()
     {
+        Debug.Log("t");
         StartCoroutine(Blackout());
     }
 

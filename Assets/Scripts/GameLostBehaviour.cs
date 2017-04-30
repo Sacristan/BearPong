@@ -4,7 +4,7 @@ using UnityStandardAssets.ImageEffects;
 
 public class GameLostBehaviour : MonoBehaviour
 {
-    private void start()
+    private void Start()
     {
         StartCoroutine(Blackout());
     }
@@ -14,7 +14,7 @@ public class GameLostBehaviour : MonoBehaviour
         VignetteAndChromaticAberration eff = GetComponentInParent<VignetteAndChromaticAberration>();
         while (eff.intensity > float.Epsilon)
         {
-            eff.intensity -= Time.deltaTime / 4;
+            eff.intensity -= Time.deltaTime / 10;
             yield return new WaitForEndOfFrame();
         }
     }

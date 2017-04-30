@@ -91,7 +91,7 @@ public class ObjectPickup : MonoBehaviour
         if (obj != null)
         {
             fJoint.connectedBody = obj.GetComponent<Rigidbody>();
-
+            obj.GetComponent<BallBehaviour>().MarkCatcheable();
             throwing = false;
             rigidbody = null;
         }
@@ -110,8 +110,6 @@ public class ObjectPickup : MonoBehaviour
             fJoint.connectedBody = null;
 
             throwing = true;
-
-            //obj.GetComponent<AudioSource>().Play();
 
             BallBehaviour bb = rigidbody.GetComponentInParent<BallBehaviour>();
             if (bb != null)

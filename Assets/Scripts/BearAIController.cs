@@ -92,7 +92,7 @@ public class BearAIController : Singleton<BearAIController>
         GameObject ball = Instantiate(spawn, throwOrigin.position, Quaternion.identity);
         ball.GetComponent<BallBehaviour>().MarkCatcheable();
         Rigidbody ballRigidbody = ball.GetComponent<Rigidbody>();
-
+		ball.tag = GameTags.Untagged;
 		if(_audioSource!=null) _audioSource.Play();
 
 		ball.tag = GameTags.Untagged;

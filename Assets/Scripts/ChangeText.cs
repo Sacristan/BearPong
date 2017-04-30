@@ -18,7 +18,7 @@ public class ChangeText : MonoBehaviour {
 			_text.text = "Its now Your turn!";
 			break;
 		case GameManager.TurnState.Bear:
-			_text.text = "Its now Bear turn!";
+			_text.text = "Its now Bear's turn!";
 			break;
 		}
 	}

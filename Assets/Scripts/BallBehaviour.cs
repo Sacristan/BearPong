@@ -19,14 +19,16 @@ public class BallBehaviour : MonoBehaviour
 		if (other.tag == GameTags.BearCup)
 		{
 			GameManager.Instance.BearScored ();
-			DrunkEffectController.Instance.GetDrunk();
+			DrunkEffectController.Instance.GetDrunk();	
 			BucketFX (other.gameObject);
+			Destroy (gameObject);
 			//Debug.Log("Cup Hit, bear gets another throw!");
 		}
 		else if (other.tag == GameTags.PlayerCup)
 		{
 			GameManager.Instance.PlayerScored ();
 			BucketFX (other.gameObject);
+			Destroy (gameObject);
 			//Debug.Log("Cup Hit, player gets another throw!");
 		}
         //Debug.Log (other.tag);
@@ -35,11 +37,14 @@ public class BallBehaviour : MonoBehaviour
         {
 			if (isCatcheable) {
 				isCatcheable = false;
+				MarkNotPickable ();
 				GameManager.Instance.ShotMissed ();
 			}
         }
     }
-
+	private void MarkNotPickable(){
+		gameObject.tag = GameTags.Untagged;
+	}
 	private void BucketFX(GameObject g)
 	{
 		Destroy (g);

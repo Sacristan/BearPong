@@ -91,7 +91,6 @@ public class ObjectPickup : MonoBehaviour
         if (obj != null)
         {
             fJoint.connectedBody = obj.GetComponent<Rigidbody>();
-            obj.GetComponent<BallBehaviour>().MarkCatcheable();
             throwing = false;
             rigidbody = null;
         }
@@ -112,6 +111,8 @@ public class ObjectPickup : MonoBehaviour
             throwing = true;
 
             BallBehaviour bb = rigidbody.GetComponentInParent<BallBehaviour>();
+			bb.MarkCatcheable();
+
             if (bb != null)
             {
 				//Debug.Log ("bb.CallSFX called");

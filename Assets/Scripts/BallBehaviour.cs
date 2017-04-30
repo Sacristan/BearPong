@@ -16,20 +16,19 @@ public class BallBehaviour : MonoBehaviour
             other.GetComponentInParent<AudioSource>().Play();
         }
 
-        if (!_CupHit)
-        {
-            _CupHit = true;
-
-            if (other.tag == GameTags.BearCup)
-            {
-                DrunkEffectController.Instance.GetDrunk();
-                //Debug.Log("Cup Hit, bear gets another throw!");
-            }
-            else if (other.tag == GameTags.PlayerCup)
-            {
-                //Debug.Log("Cup Hit, player gets another throw!");
-            }
-        }
+		if (other.tag == GameTags.BearCup)
+		{
+			GameManager.Instance.BearScored ();
+			DrunkEffectController.Instance.GetDrunk();
+			BucketFX (other.gameObject);
+			//Debug.Log("Cup Hit, bear gets another throw!");
+		}
+		else if (other.tag == GameTags.PlayerCup)
+		{
+			GameManager.Instance.PlayerScored ();
+			BucketFX (other.gameObject);
+			//Debug.Log("Cup Hit, player gets another throw!");
+		}
         //Debug.Log (other.tag);
 
         if (other.tag == GameTags.BallCatchNet)
@@ -40,6 +39,11 @@ public class BallBehaviour : MonoBehaviour
 			}
         }
     }
+
+	private void BucketFX(GameObject g)
+	{
+		Destroy (g);
+	}
 
     public void MarkCatcheable()
     {

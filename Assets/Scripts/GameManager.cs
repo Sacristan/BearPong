@@ -82,7 +82,7 @@ public class GameManager : Singleton<GameManager>
     public void BearScored()
     {
         DrunkEffectController.Instance.GetDrunk();
-        if (++bearScore >= MaxScore) TriggerWin();
+        if (++bearScore >= MaxScore) TriggerLose();
         BearAIController.Instance.QueueThrow();
     }
 

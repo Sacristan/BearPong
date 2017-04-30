@@ -19,7 +19,8 @@ public class GameManager : Singleton<GameManager>
     public BearPongBucket[] BearPongBucketsPlayer { get { return bearPongBucketsPlayer; } }
     public BearPongBucket[] BearPongBucketsBear { get { return bearPongBucketsBear; } }
 
-    public delegate void EventHandler(TurnState newTurnState);
+    public delegate void EventHandler(TurnState turnState);
+	public event EventHandler OnFirstTurnStarted;
     public event EventHandler OnTurnStateChanged;
 
     private int playerScore = 0;
@@ -27,8 +28,10 @@ public class GameManager : Singleton<GameManager>
 
     private const int MaxScore = 3;
 
-    private void Start()
+	private IEnumerator Start()
     {
+		yield return null;
+
         switch (turnState)
         {
             case TurnState.Bear:
@@ -40,6 +43,9 @@ public class GameManager : Singleton<GameManager>
             default:
                 throw new System.NotImplementedException();
         }
+
+		if (OnFirstTurnStarted != null)
+			OnFirstTurnStarted.Invoke (turnState);
     }
 
     public void ToggleTurn()

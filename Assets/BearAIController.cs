@@ -16,10 +16,9 @@ public class BearAIController : Singleton<BearAIController>
     [SerializeField]
     private MinMax shotAngle = new MinMax(35, 45);
 
-    [SerializeField]
-    private MinMax throwWaitTime = new MinMax(1f, 3f);
+    //[SerializeField]
+    private MinMax throwWaitTime = new MinMax(3f, 6f);
 
-    [SerializeField]
     private float throwInterval = 3f;
 
     private float lastShotTime;
@@ -39,12 +38,13 @@ public class BearAIController : Singleton<BearAIController>
         }
     }
 
-    private float Area
+    private float ThrowErrorArea
     {
         get
         {
-            if (drunkLevel == 1) return 0.1f;
-            if (drunkLevel == 2) return 0.2f;
+			if (drunkLevel == 0) return 0.1f;
+            if (drunkLevel == 1) return 0.25f;
+            if (drunkLevel == 2) return 0.35f;
             if (drunkLevel == 3) return 0.5f;
 
             return 0;
@@ -89,6 +89,7 @@ public class BearAIController : Singleton<BearAIController>
         GameObject ball = Instantiate(spawn, throwOrigin.position, Quaternion.identity);
         ball.GetComponent<BallBehaviour>().MarkCatcheable();
         Rigidbody ballRigidbody = ball.GetComponent<Rigidbody>();
+		ball.tag = GameTags.Untagged;
         ballRigidbody.velocity = GetBallisticVelocity(Target, shotAngle.RandomFromRange());
         Destroy(ball, 5f);
     }
@@ -96,7 +97,7 @@ public class BearAIController : Singleton<BearAIController>
     internal void TriggerDrunk()
     {
         drunkLevel++;
-        Debug.LogFormat("Bear drunk level now is: {0} and miscalculation area: {1}",drunkLevel, Area);
+		Debug.LogFormat("Bear drunk level now is: {0} and throw error area: {1}",drunkLevel, ThrowErrorArea);
     }
 
     private Vector3 GetBallisticVelocity(Transform target, float angle)
@@ -116,9 +117,9 @@ public class BearAIController : Singleton<BearAIController>
     private Vector3 GetTargetPosition(Transform t)
     {
         Vector3 drunkCorrection = new Vector3(
-           UnityEngine.Random.Range(-Area, Area),
-           UnityEngine.Random.Range(-Area, Area),
-           UnityEngine.Random.Range(-Area, Area)
+			UnityEngine.Random.Range(-ThrowErrorArea, ThrowErrorArea),
+			UnityEngine.Random.Range(-ThrowErrorArea, ThrowErrorArea),
+			UnityEngine.Random.Range(-ThrowErrorArea, ThrowErrorArea)
         );
 
         return t.position + drunkCorrection;

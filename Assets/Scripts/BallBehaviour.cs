@@ -34,7 +34,10 @@ public class BallBehaviour : MonoBehaviour
 
         if (other.tag == GameTags.BallCatchNet)
         {
-            if (isCatcheable) GameManager.Instance.ShotMissed();
+			if (isCatcheable) {
+				isCatcheable = false;
+				GameManager.Instance.ShotMissed ();
+			}
         }
     }
 

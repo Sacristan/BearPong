@@ -1,0 +1,10 @@
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class MainMenuBallBehaviour : MonoBehaviour
+{
+    private void OnTriggerEnter(Collider other)
+    {
+        SceneManager.LoadScene(SceneNames.Game);
+    }
+}

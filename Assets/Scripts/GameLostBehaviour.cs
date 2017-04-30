@@ -12,7 +12,7 @@ public class GameLostBehaviour : MonoBehaviour
     private IEnumerator Blackout()
     {
         VignetteAndChromaticAberration eff = GetComponentInParent<VignetteAndChromaticAberration>();
-        while (!(eff.intensity > float.Epsilon))
+        while (eff.intensity > float.Epsilon)
         {
             eff.intensity -= Time.deltaTime / 4;
             yield return new WaitForEndOfFrame();

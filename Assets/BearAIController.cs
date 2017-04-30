@@ -26,12 +26,14 @@ public class BearAIController : Singleton<BearAIController>
 
     private int drunkLevel = 0;
 
+    private List<BearPongBucket> bearPongBuckets;
+
     private Transform Target
     {
         get
         {
-            BearPongBucket[] bearPongBuckets = GameManager.Instance.BearPongBucketsBear;
-            int idx = UnityEngine.Random.Range(0, bearPongBuckets.Length);
+            bearPongBuckets.RemoveAll(x => x == null);
+            int idx = UnityEngine.Random.Range(0, bearPongBuckets.Count);
             BearPongBucket bearPongBucket = bearPongBuckets[idx];
             return bearPongBucket.ThrowTarget;
         }
@@ -54,6 +56,7 @@ public class BearAIController : Singleton<BearAIController>
     private void Start()
     {
         GameManager.Instance.OnTurnStateChanged += Instance_OnTurnStateChanged;
+        this.bearPongBuckets = new List<BearPongBucket>(GameManager.Instance.BearPongBucketsBear);
     }
 
 #if DEBUG_BEAR_BEHAVIOUR

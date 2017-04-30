@@ -29,10 +29,26 @@ public class GameManager : Singleton<GameManager>
 
     private void Start()
     {
-        BallSpawner.Instance.SpawnBall();
+        switch (turnState)
+        {
+            case TurnState.Bear:
+                BearAIController.Instance.QueueThrow();
+                break;
+            case TurnState.Player:
+                BallSpawner.Instance.SpawnBall();
+                break;
+            default:
+                throw new System.NotImplementedException();
+        }
     }
 
     public void ToggleTurn()
+    {
+        TakeAction();
+        if (OnTurnStateChanged != null) OnTurnStateChanged.Invoke(turnState);
+    }
+
+    private void TakeAction()
     {
         switch (turnState)
         {
@@ -47,8 +63,6 @@ public class GameManager : Singleton<GameManager>
             default:
                 throw new System.NotImplementedException();
         }
-
-        if (OnTurnStateChanged != null) OnTurnStateChanged.Invoke(turnState);
     }
 
     public void PlayerScored()

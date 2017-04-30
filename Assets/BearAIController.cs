@@ -1,10 +1,11 @@
-﻿#define DEBUG_BEAR_BEHAVIOUR
+﻿//#define DEBUG_BEAR_BEHAVIOUR
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BearAIController : MonoBehaviour
+public class BearAIController : Singleton<BearAIController>
 {
     [SerializeField]
     private Transform throwOrigin;
@@ -15,19 +16,38 @@ public class BearAIController : MonoBehaviour
     [SerializeField]
     private MinMax shotAngle = new MinMax(35, 45);
 
-    [SerializeField]
+    //[SerializeField]
+    private MinMax throwWaitTime = new MinMax(3f, 6f);
+
     private float throwInterval = 3f;
 
     private float lastShotTime;
+
+    private int drunkLevel = 0;
+
+    private List<BearPongBucket> bearPongBuckets;
 
     private Transform Target
     {
         get
         {
-            BearPongBucket[] bearPongBuckets = GameManager.Instance.BearPongBucketsBear;
-            int idx = Random.Range(0, bearPongBuckets.Length);
+            bearPongBuckets.RemoveAll(x => x == null);
+            int idx = UnityEngine.Random.Range(0, bearPongBuckets.Count);
             BearPongBucket bearPongBucket = bearPongBuckets[idx];
             return bearPongBucket.ThrowTarget;
+        }
+    }
+
+    private float ThrowErrorArea
+    {
+        get
+        {
+			if (drunkLevel == 0) return 0.1f;
+            if (drunkLevel == 1) return 0.25f;
+            if (drunkLevel == 2) return 0.35f;
+            if (drunkLevel == 3) return 0.5f;
+
+            return 0;
         }
     }
 
@@ -36,6 +56,7 @@ public class BearAIController : MonoBehaviour
     private void Start()
     {
         GameManager.Instance.OnTurnStateChanged += Instance_OnTurnStateChanged;
+        this.bearPongBuckets = new List<BearPongBucket>(GameManager.Instance.BearPongBucketsBear);
     }
 
 #if DEBUG_BEAR_BEHAVIOUR
@@ -46,15 +67,37 @@ public class BearAIController : MonoBehaviour
 #endif
     #endregion
 
+    #region Public Methods
+
+    public void QueueThrow()
+    {
+        StartCoroutine(ThrowRoutine());
+    }
+#endregion
+
     #region Private Methods
-    private void Shoot()
+    private IEnumerator ThrowRoutine()
+    {
+        yield return new WaitForSeconds(throwWaitTime.RandomFromRange());
+        Throw();
+    }
+
+    private void Throw()
     {
         lastShotTime = Time.realtimeSinceStartup;
 
         GameObject ball = Instantiate(spawn, throwOrigin.position, Quaternion.identity);
+        ball.GetComponent<BallBehaviour>().MarkCatcheable();
         Rigidbody ballRigidbody = ball.GetComponent<Rigidbody>();
+		ball.tag = GameTags.Untagged;
         ballRigidbody.velocity = GetBallisticVelocity(Target, shotAngle.RandomFromRange());
         Destroy(ball, 5f);
+    }
+
+    internal void TriggerDrunk()
+    {
+        drunkLevel++;
+		Debug.LogFormat("Bear drunk level now is: {0} and throw error area: {1}",drunkLevel, ThrowErrorArea);
     }
 
     private Vector3 GetBallisticVelocity(Transform target, float angle)
@@ -73,7 +116,13 @@ public class BearAIController : MonoBehaviour
 
     private Vector3 GetTargetPosition(Transform t)
     {
-        return t.position;
+        Vector3 drunkCorrection = new Vector3(
+			UnityEngine.Random.Range(-ThrowErrorArea, ThrowErrorArea),
+			UnityEngine.Random.Range(-ThrowErrorArea, ThrowErrorArea),
+			UnityEngine.Random.Range(-ThrowErrorArea, ThrowErrorArea)
+        );
+
+        return t.position + drunkCorrection;
     }
 
     #endregion

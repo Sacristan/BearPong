@@ -19,24 +19,85 @@ public class GameManager : Singleton<GameManager>
     public BearPongBucket[] BearPongBucketsPlayer { get { return bearPongBucketsPlayer; } }
     public BearPongBucket[] BearPongBucketsBear { get { return bearPongBucketsBear; } }
 
-    public delegate void EventHandler(TurnState newTurnState);
+    public delegate void EventHandler(TurnState turnState);
+	public event EventHandler OnFirstTurnStarted;
     public event EventHandler OnTurnStateChanged;
 
-    public void ToggleTurn()
+    private int playerScore = 0;
+    private int bearScore = 0;
+
+    private const int MaxScore = 3;
+
+	private IEnumerator Start()
     {
+		yield return null;
+
         switch (turnState)
         {
-            case TurnState.Player:
-                turnState = TurnState.Bear;
-                break;
             case TurnState.Bear:
-                turnState = TurnState.Player;
+                BearAIController.Instance.QueueThrow();
+                break;
+            case TurnState.Player:
+                BallSpawner.Instance.SpawnBall();
                 break;
             default:
                 throw new System.NotImplementedException();
         }
 
+		if (OnFirstTurnStarted != null)
+			OnFirstTurnStarted.Invoke (turnState);
+    }
+
+    public void ToggleTurn()
+    {
+        TakeAction();
         if (OnTurnStateChanged != null) OnTurnStateChanged.Invoke(turnState);
     }
 
+    private void TakeAction()
+    {
+        switch (turnState)
+        {
+            case TurnState.Player:
+                turnState = TurnState.Bear;
+                BearAIController.Instance.QueueThrow();
+                break;
+            case TurnState.Bear:
+                turnState = TurnState.Player;
+                BallSpawner.Instance.SpawnBall();
+                break;
+            default:
+                throw new System.NotImplementedException();
+        }
+    }
+
+    public void PlayerScored()
+    {
+        BearAIController.Instance.TriggerDrunk();
+        if (++playerScore >= MaxScore) TriggerWin();
+        BallSpawner.Instance.SpawnBall();
+    }
+
+    public void BearScored()
+    {
+        DrunkEffectController.Instance.GetDrunk();
+        if (++bearScore >= MaxScore) TriggerWin();
+        BearAIController.Instance.QueueThrow();
+    }
+
+    public void ShotMissed()
+    {
+        Debug.Log("ShotMissed");
+        ToggleTurn();
+    }
+
+    private void TriggerWin()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    private void TriggerLose()
+    {
+        throw new System.NotImplementedException();
+    }
 }

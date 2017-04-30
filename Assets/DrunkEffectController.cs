@@ -10,9 +10,11 @@ public class DrunkEffectController : Singleton<DrunkEffectController>
     private float drunkinessLevel = 0f;
 
     private readonly MinMax cameraFOVMinMax = new MinMax(60, 90);
+    private readonly MinMax blurMinMax = new MinMax(0, 7);
 
     private Camera _camera;
     private VignetteAndChromaticAberration _vignetteAndChromaticAberration;
+    private BlurOptimized _Blur;
 
     public void GetDrunk()
     {
@@ -25,13 +27,14 @@ public class DrunkEffectController : Singleton<DrunkEffectController>
     {
         _camera = GetComponent<Camera>();
         _vignetteAndChromaticAberration = GetComponent<VignetteAndChromaticAberration>();
+        _Blur = GetComponent<BlurOptimized>();
     }
 
     private void Update()
     {
         float targetFOV = Mathf.Lerp(cameraFOVMinMax.min, cameraFOVMinMax.max, drunkinessLevel);
         _camera.fieldOfView = targetFOV;
-
+        _Blur.blurSize = Mathf.Lerp(blurMinMax.min, blurMinMax.max, drunkinessLevel);
         _vignetteAndChromaticAberration.intensity = drunkinessLevel;
         _vignetteAndChromaticAberration.blur = drunkinessLevel;
     }

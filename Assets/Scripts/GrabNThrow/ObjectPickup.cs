@@ -111,12 +111,12 @@ public class ObjectPickup : MonoBehaviour
 
             throwing = true;
 
-            obj.GetComponent<AudioSource>().Play();
+            //obj.GetComponent<AudioSource>().Play();
 
             BallBehaviour bb = rigidbody.GetComponentInParent<BallBehaviour>();
             if (bb != null)
             {
-				Debug.Log ("bb.CallSFX called");
+				//Debug.Log ("bb.CallSFX called");
 				bb.CallSFX();
                 bb.StartCoroutine(bb.KillInSeconds());
             }

@@ -5,6 +5,6 @@ public class MainMenuBallBehaviour : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene(SceneNames.Game);
+        if (other.tag == "Finish") SceneManager.LoadScene(SceneNames.Game);
     }
 }
